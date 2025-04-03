@@ -12,6 +12,10 @@ class ParkingLotController(
 ) {
 
     @GetMapping
-    suspend fun findAllUsers() =
+    suspend fun findAllParkingLots() =
         parkingLotApiService.findAllParkingLots()
+
+    @GetMapping
+    suspend fun findOneParkingLot() =
+
 }

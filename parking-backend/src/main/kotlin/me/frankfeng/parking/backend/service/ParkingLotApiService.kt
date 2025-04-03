@@ -14,4 +14,10 @@ class ParkingLotApiService(
             .uri("")
             .retrieve()
             .awaitBody<ParkingLotResponse>()
+
+    suspend fun findOneParkingLot(phid: String) : ParkingLotResponse =
+        webClient.get()
+            .uri("?where=phid =\"" + phid +"\"")
+            .retrieve()
+            .awaitBody<ParkingLotResponse>()
 }
